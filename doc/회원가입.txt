@@ -1,0 +1,33 @@
+tBoard 라는 테이블 만들기
+
+tbno		순차적으로 증가(시작은 1001)
+tbid		String member(m_id 참조)
+tbtitle		String
+tbdate		date
+tb_isshow	'Y' or 'N'
+
+create table tBoard(
+    tbno number(4)
+        CONSTRAINT tb_no_pk PRIMARY KEY,
+    tbid varchar2(10 char)
+        CONSTRAINT tb_id_uk UNIQUE
+        CONSTRAINT tb_id_nn not null,
+    tbtitle varchar2(20 char)
+        CONSTRAINT tb_title_nn not null,
+    tbdate date default sysdate,
+    tb_isshow char(1 byte) default 'Y'
+        CONSTRAINT tb_isshow_ck check(tb_isshow in('Y', 'N'))
+        CONSTRAINT tb_isshow_nn not null
+);
+
+insert into
+	member(m_no, m_id, m_pw, m_name, m_mail, m_tel, m_avt, m_gen)
+values(
+	(
+		select
+			NVL(max(m_no) + 1, 1001)
+		form
+			member
+	),
+	'euns', '1234', '전은석', 'euns@koitt.com', '010-1111-1111', 11, 'M'
+);

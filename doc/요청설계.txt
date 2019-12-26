@@ -1,0 +1,47 @@
+# 회원 관련 요청
+	요청내용	:
+	파라미터	:
+	컨트롤러	:
+	실행함수	:
+	응답문서	:
+
+1. 로그인 폼 요청
+	요청내용	:	/yj/member/login.yj
+	파라미터	:	무
+	컨트롤러	:	com.ex1.yj.controller.Member
+	실행함수	:	loginForm()
+	응답문서	:	/WEB-INF/views/member/login.jsp
+
+2. 로그인 처리 요청
+	요청내용	:	/yj/member/loginProc.yj
+	파라미터	:	m_id, m_pw, m_name, m_mail, m_tel, m_avt, m_gen, m_isshow
+	컨트롤러	:	com.ex1.yj.controller.Member	
+	실행함수	:	loginProc()
+	응답문서	:	
+				로그인 성공 시
+				/WEB-INF/views/main.jsp
+				
+				로그인 실패 시
+				/WEB-INF/views/member/login.jsp
+
+=======================================================================
+# 게시판 관련 요청
+
+1. 게시판 폼 요청
+	요청내용	:	/yj/board/tBoard.yj
+	파라미터	:	무
+	컨트롤러	:	com.ex1.yj.controller.Board
+	실행함수	:	tBoardForm()
+	응답문서	:	/WEB-INF/views/board/tBoard.jsp
+
+2. 게시판 글 등록 요청
+	요청내용	:	/yj/board/tBoardAction.yj
+	파라미터	:	title, body
+	컨트롤러	:	com.ex1.yj.controller.Board
+	실행함수	:	tBoardAction()
+	응답문서	:	
+				글 등록 성공 시
+				/WEB-INF/views/main.jsp
+				
+				글 등록 실패 시
+				/WEB-INF/views/board/tBoard.jsp
