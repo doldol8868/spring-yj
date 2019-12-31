@@ -13,7 +13,33 @@
 			$(location).attr('href', '/yj/main.yj');
 		});
 	});
+	
+	function inputCheck(check){
+		// 아이디 입력 여부 검사
+		if(check.m_id != null) {
+			if(check.m_id.value == "") {
+				alert("아이디를 입력하세요.")
+				check.m_id.ficus()
+				
+				return false;
+			}
+		}
+		// 비밀번호 입력 여부 검사
+		if(check.m_pw != null) {
+			if(check.m_pw.value == "") {
+				alert("패스워드를 입력하세요.")
+				check.m_pw.ficus()
+				
+				return false;
+			}
+		}
+		if(<%
+			
+		%>)
+			
+	}
 </script>
+
 </head>
 <body>
 	<div align="center">
@@ -30,7 +56,7 @@
 			<input type="password" id="m_pw" name="m_pw">
 			<br>
 			<br>
-			<input type="submit">
+			<input type="submit" onclick="inputCheck(this.form)">
 		</form>
 	</center>
 </c:if>

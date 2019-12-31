@@ -10,6 +10,10 @@ public class MemberVO {
 	private String m_name;
 	private String m_mail;
 	private String m_tel;
+	private Date m_join;
+	private int m_avt;
+	private String m_gen;
+	private String isshow;
 	
 	public int getM_no() {
 		return m_no;
@@ -71,9 +75,6 @@ public class MemberVO {
 	public void setIsshow(String isshow) {
 		this.isshow = isshow;
 	}
-	private Date m_join;
-	private int m_avt;
-	private String m_gen;
-	private String isshow;
+	
 	
 }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>tBoardList</title>
+<title>tBoardList2</title>
 <script type="text/javascript" src="/yj/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -80,6 +80,9 @@
 		<h3>
 			게시판 리스트
 		</h3>
+		<h3>
+			333333333333
+		</h3>
 	</div>
 	<c:if test="${empty SID}">
 		<div align="center">
@@ -93,7 +96,7 @@
 	<c:if test="${not empty SID}">
 		<div align="center">
 			<input type="button" id="main" value="메인으로">
-			<input type="button" id="logout" value="로그아웃">
+			<input type="button"    id="logout" value="로그아웃">
 			<input type="button" id="tBoardForm" value="글 작성">
 			<input type="button" id="tBoardForm2" value="글 작성2">
 			<input type="button" id="tBoardForm3" value="글 작성3">
@@ -106,19 +109,15 @@
 			<span class="boardUserName">작성자</span>
 			<span class="boardDate">작성일</span>
 		</div>
-		
 		<c:forEach var="data" items="${LIST}">
-			<div class="boardList">
-				<span class="boardNo">${data.tbno}</span>
-				<span class="boardTitle">${data.tbtitle}</span>
-				<span class="boardUserName">${data.tbid}</span>
-				<span class="boardDate">${data.sdate}</span>
-			</div>
+		<div class="boardList">
+			<span class="boardNo">${data.tbno}</span>
+			<span class="boardTitle">${data.tbtitle}</span>
+			<span class="boardUserName">${data.tbid}</span>
+			<span class="boardDate">${data.sdate}</span>
+		</div>
 		</c:forEach>
-	
 	</div>
-	
-	
 
 </body>
 </html>

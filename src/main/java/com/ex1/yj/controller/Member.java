@@ -1,5 +1,8 @@
 package com.ex1.yj.controller;
 
+import java.io.PrintWriter;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,4 +105,45 @@ public class Member {
 		
 		return mv;
 	}
+	
+	@RequestMapping("/memberList.yj")
+	public ModelAndView memberList(ModelAndView mv) {
+		
+		List<MemberVO> list = mDAO.memberList(); 
+		mv.addObject("M_LIST", list);
+		mv.setViewName("/member/memberList");
+		
+		return mv;
+	}
+	
+	@RequestMapping("/memberInfo.yj")
+	public ModelAndView memberInfo(ModelAndView mv,
+									int m_no) {
+		
+		MemberVO info = mDAO.memberInfo(m_no);
+		
+		mv.addObject("INFO", info);
+		mv.setViewName("/member/memberInfo");
+		
+		return mv;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+// 	연습----------------------------------------------------------
+	
+	
+	
+	
+	
+	
 }

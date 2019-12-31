@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>tBoard</title>
+<title>tBoard2</title>
 <script type="text/javascript" src="/yj/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#cancle').click(function(){
-			$(location).attr('href', '/yj/board/tBoardList.yj');
+			$(location).attr('href', '/yj/board/tBoardList3.yj');
 		});
 		$('#login').click(function(){
 			$(location).attr('href', '/yj/member/login.yj');
@@ -29,7 +29,7 @@
 	
 	<c:if test="${not empty SID}">
 		<div align="center">
-			<form method="POST" action="/yj/board/tBoardAction.yj">
+			<form method="POST" action="/yj/board/tBoardAction3.yj">
 				<input name="tbid" type="hidden" id="tbid" value="${SID}">
 				<label for="title">제목</label>
 				<input name="tbtitle" id="title" type="text">

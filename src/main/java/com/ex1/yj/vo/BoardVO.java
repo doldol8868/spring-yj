@@ -8,6 +8,8 @@ public class BoardVO {
 	private String tbid;
 	private String tbtitle;
 	private String tbbody;
+	private String sdate;
+	
 	
 	public int getTbno() {
 		return tbno;
@@ -33,19 +35,13 @@ public class BoardVO {
 	public void setTbbody(String tbbody) {
 		this.tbbody = tbbody;
 	}
-	public Date getTbdate() {
-		return tbdate;
+	public String getSdate() {
+		return sdate;
 	}
-	public void setTbdate(Date tbdate) {
-		this.tbdate = tbdate;
+	public void setSdate(String sdate) {
+		this.sdate = sdate;
 	}
-	public String getTb_isshow() {
-		return tb_isshow;
-	}
-	public void setTb_isshow(String tb_isshow) {
-		this.tb_isshow = tb_isshow;
-	}
-	private Date tbdate;
-	private String tb_isshow;
 	
+	
+
 }

@@ -24,4 +24,53 @@
 		)
 	</insert>
 	
+	<select id="memberList" resultType="mVO">
+		SELECT
+			m_no, m_id, m_name, m_tel, to_char(m_join, 'yyyy-mm-dd') m_join
+		FROM
+			member
+		WHERE
+			m_isshow = 'Y'
+	</select>
+	
+	<select id="memberInfo" resultType="mVO" parameterType="int">
+		SELECT
+			m_id, m_name, m_mail, m_tel, to_char(m_join, 'yyyy-mm-dd') m_join
+		FROM
+			member
+		WHERE
+			m_no = #{m_no}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
 </mapper>

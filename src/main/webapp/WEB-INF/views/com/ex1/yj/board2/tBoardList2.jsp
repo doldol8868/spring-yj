@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>tBoardList</title>
+<title>tBoardList2</title>
 <script type="text/javascript" src="/yj/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -78,7 +78,7 @@
 <body>
 	<div align="center">
 		<h3>
-			게시판 리스트
+			게시판 리스트22222222222222
 		</h3>
 	</div>
 	<c:if test="${empty SID}">
@@ -93,7 +93,7 @@
 	<c:if test="${not empty SID}">
 		<div align="center">
 			<input type="button" id="main" value="메인으로">
-			<input type="button" id="logout" value="로그아웃">
+			<input type="button"    id="logout" value="로그아웃">
 			<input type="button" id="tBoardForm" value="글 작성">
 			<input type="button" id="tBoardForm2" value="글 작성2">
 			<input type="button" id="tBoardForm3" value="글 작성3">
@@ -115,10 +115,7 @@
 				<span class="boardDate">${data.sdate}</span>
 			</div>
 		</c:forEach>
-	
 	</div>
-	
-	
 
 </body>
 </html>

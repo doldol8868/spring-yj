@@ -22,6 +22,20 @@
 		$('#tBoardList').click(function(){
 			$(location).attr('href', '/yj/board/tBoardList.yj');
 		});
+		$('#tBoardList2').click(function(){
+			$(location).attr('href', '/yj/board/tBoardList2.yj');
+		});
+		$('#tBoardList3').click(function(){
+			$(location).attr('href', '/yj/board/tBoardList3.yj');
+		});
+		
+		
+		$('#memberList').click(function(){
+			$(location).attr('href', '/yj/member/memberList.yj');
+		});
+		$('#memberList2').click(function(){
+			$(location).attr('href', '/yj/member/memberList2.yj');
+		});
 	});
 </script>
 </head>
@@ -36,6 +50,10 @@
 		<input type="button" id="login" value="로그인">
 		<input type="button" id="join" value="회원가입">
 		<input type="button" id="tBoardList" value="게시판">
+		<input type="button" id="tBoardList2" value="게시판2">
+		<input type="button" id="tBoardList3" value="게시판3">
+		<input type="button" id="memberList" value="회원 정보 리스트">
+		<input type="button" id="memberList2" value="회원 정보 리스트2">
 	</div>
 </c:if>
 <c:if test="${not empty SID}">
@@ -43,6 +61,10 @@
 		<h2>${SID}님 환영합니다.</h2>
 		<input type="button" id="logout" value="로그아웃">
 		<input type="button" id="tBoardList" value="게시판">
+		<input type="button" id="tBoardList2" value="게시판2">
+		<input type="button" id="tBoardList3" value="게시판3">
+		<input type="button" id="memberList" value="회원 정보 리스트">
+		<input type="button" id="memberList2" value="회원 정보 리스트2">
 	</div>
 </c:if>
 </body>

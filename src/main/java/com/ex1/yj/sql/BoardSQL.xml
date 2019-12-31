@@ -7,12 +7,72 @@
 
 
 	<insert id="tBoardAction" parameterType="bVO">
+		<selectKey keyProperty="tbno" resultType="int" order="BEFORE">
+			SELECT
+				NVL(MAX(tbno) + 1, 10001)
+			FROM
+				tboard
+		</selectKey>
 		insert into
 			tBoard(tbno, tbid, tbtitle, tbbody)
 		values(
-			(SELECT NVL(MAX(tbno) + 1, 10001) from tBoard),
-			#{tbid}, #{tbtitle}, #{tbbody}
+			#{tbno}, #{tbid}, #{tbtitle}, #{tbbody}
 		)
 	</insert>
+	
+	<insert id="tBoardAction2" parameterType="bVO">
+		<selectKey keyProperty="tbno" resultType="int" order="BEFORE">
+			SELECT
+				NVL(MAX(tbno) + 1, 10001)
+			FROM
+				tboard
+		</selectKey>
+		INSERT INTO
+			tBoard(tbno, tbid, tbtitle, tbbody)
+		VALUES(
+			#{tbno}, #{tbid}, #{tbtitle}, #{tbbody}
+		)
+	</insert>
+	
+	<insert id="tBoardAction3" parameterType="bVO">
+		<selectKey keyProperty="tbno" resultType="int" order="BEFORE">
+			SELECT
+				NVL(MAX(tbno) + 1, 10001)
+			FROM
+				tBoard
+		</selectKey>
+		INSERT INTO
+			tBoard(tbno, tbid, tbtitle, tbbody)
+		VALUES(
+			#{tbno}, #{tbid}, #{tbtitle}, #{tbbody}
+		)
+	</insert>
+	
+	<select id="tBoardList" resultType="bVO">
+		SELECT 
+			tbno, tbid, tbtitle, to_char(tbdate, 'yyyy-mm-dd') sdate
+		FROM
+			tBoard
+		WHERE
+			tb_isshow = 'Y'
+	</select>
+	
+	<select id="tBoardList2" resultType="bVO">
+		SELECT
+			tbno, tbid, tbtitle, to_char(tbdate, 'yyyy-mm-dd') sdate
+		FROM
+			tBoard
+		WHERE
+			tb_isshow = 'Y'
+	</select>
+	
+	<select id="tBoardList3" resultType="bVO">
+		SELECT
+			tbno, tbid, tbtitle, to_char(tbdate, 'yyyy-mm-dd') sdate
+		FROM
+			tBoard
+		WHERE
+			tb_isshow = 'Y'
+	</select>
 	
 </mapper>
