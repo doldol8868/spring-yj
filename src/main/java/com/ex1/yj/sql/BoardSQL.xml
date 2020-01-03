@@ -75,4 +75,13 @@
 			tb_isshow = 'Y'
 	</select>
 	
+	<select id="tBoardBody" resultType="bVO" parameterType="int">
+		SELECT
+			tbtitle, tbid, to_char(tbdate, 'yyyy-mm-dd') sdate, tbbody 
+		FROM
+			tBoard
+		WHERE
+			tbno = #{tbno}
+	</select>
+	
 </mapper>

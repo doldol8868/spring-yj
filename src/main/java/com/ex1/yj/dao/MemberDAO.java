@@ -39,6 +39,13 @@ public class MemberDAO {
 		return sqlSession.selectOne("mSQL.memberInfo", m_no);
 	}
 	
+	public int idCheck(String m_id) {
+		
+		int cnt = sqlSession.selectOne("mSQL.idCheck", m_id);
+		
+		return cnt;
+	}
+	
 	
 	
 	
@@ -64,5 +71,19 @@ public class MemberDAO {
 	
 	
 	//	연습--------------------------------------------------------------------------------
+	
+	public List<MemberVO> memberList2() {
+		
+		List<MemberVO> list = sqlSession.selectList("mSQL.memberList");
+		
+		return list;
+	}
+	
+	public MemberVO memberInfo2(int m_no) {
+		
+		MemberVO info = sqlSession.selectOne("mSQL.memberInfo2", m_no);
+		
+		return info;
+	}
 	
 }

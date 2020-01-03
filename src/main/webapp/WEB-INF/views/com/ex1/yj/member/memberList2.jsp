@@ -72,10 +72,20 @@
 			$(location).attr('href', '/yj/member/memberInfo.yj');
 		});
 		
+		$('.memberList').click(function(){
+			var str = $(this).children().first().text();
+			
+			$('#m_no').val(str);
+			$('#frm').submit();
+		})
 	});
 </script>
 </head>
 <body>
+	<form method="POST" id="frm" action="/yj/member/memberInfo2.yj">
+		<input type="hidden" id="m_no" name="m_no" />
+	</form>
+	
 	<div align="center">
 		<h3>
 			회원 리스트

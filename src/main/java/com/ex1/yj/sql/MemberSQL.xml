@@ -42,6 +42,15 @@
 			m_no = #{m_no}
 	</select>
 	
+	<select id="idCheck" resultType="int" parameterType="string">
+		SELECT
+			count(*) cnt
+		FROM
+			member
+		WHERE
+			#{m_id} = m_id
+		
+	</select>
 	
 	
 	
@@ -57,6 +66,32 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<select id="memberList2" resultType="mVO">
+		SELECT
+			m_no, m_id, m_name, m_tel, to_char(m_join, 'yyyy-mm-dd') m_join
+		FROM
+			member
+		WHERE
+			m_isshow = 'Y'
+	</select>
+	
+	<select id="memberInfo2" resultType="mVO" parameterType="int">
+		SELECT
+			m_id, m_name, m_mail, m_tel, to_char(m_join, 'yyyy-mm-dd') m_join
+		FROM
+			member
+		WHERE
+			#{m_no} = m_no
+	</select>
 	
 	
 	

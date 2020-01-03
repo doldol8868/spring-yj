@@ -5,29 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>tBoardList</title>
-<script type="text/javascript" src="/yj/js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#main').click(function(){
-			$(location).attr('href', '/yj');
-		});
-		$('#login').click(function(){
-			$(location).attr('href', '/yj/member/login.yj');
-		});
-		$('#logout').click(function(){
-			$(location).attr('href', '/yj/member/logout.yj');
-		});
-		$('#tBoardForm').click(function(){
-			$(location).attr('href', '/yj/board/tBoardForm.yj');
-		});
-		$('#tBoardForm2').click(function(){
-			$(location).attr('href', '/yj/board/tBoardForm2.yj');
-		});
-		$('#tBoardForm3').click(function(){
-			$(location).attr('href', '/yj/board/tBoardForm3.yj');
-		});
-	});
-</script>
 <style>
 	.boardContainer{
 		width: 600px;
@@ -74,8 +51,41 @@
 		grid-template-columns: 1fr 3fr 1fr 1fr;
 	}
 </style>
+<script type="text/javascript" src="/yj/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#main').click(function(){
+			$(location).attr('href', '/yj');
+		});
+		$('#login').click(function(){
+			$(location).attr('href', '/yj/member/login.yj');
+		});
+		$('#logout').click(function(){
+			$(location).attr('href', '/yj/member/logout.yj');
+		});
+		$('#tBoardForm').click(function(){
+			$(location).attr('href', '/yj/board/tBoardForm.yj');
+		});
+		$('#tBoardForm2').click(function(){
+			$(location).attr('href', '/yj/board/tBoardForm2.yj');
+		});
+		$('#tBoardForm3').click(function(){
+			$(location).attr('href', '/yj/board/tBoardForm3.yj');
+		});
+		
+		$('.boardList').click(function(){
+			var str = $(this).children().first().text();
+			
+			$('#tbno').val(str);
+			$('#frm').submit();
+		});
+	});
+</script>
 </head>
 <body>
+	<form method="POST" id="frm" action="/yj/board/tBoardBody.yj">
+		<input type="hidden" name="tbno" id="tbno" />
+	</form>
 	<div align="center">
 		<h3>
 			게시판 리스트
@@ -115,7 +125,6 @@
 				<span class="boardDate">${data.sdate}</span>
 			</div>
 		</c:forEach>
-	
 	</div>
 	
 	

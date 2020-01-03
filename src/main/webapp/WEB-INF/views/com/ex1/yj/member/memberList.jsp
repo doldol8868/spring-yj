@@ -73,9 +73,9 @@
 		});
 		
 		$('.memberList').click(function(){
-			var str = $(this).children().first().text();
-			$('#m_no').val(str);
-			$('#frm').submit();
+			var str = $(this).children().first().text();	// str이라는 변수에 클릭된 .memberList의 자식태그 중에 첫 번째 자식의 내용을 담는다.
+			$('#m_no').val(str);							// m_no 라는 아이디 값을 가진 곳에 str을 입력한다.
+			$('#frm').submit();								// 그리고 난 뒤 #frm 태그를 서브밋한다.
 		});
 	});
 </script>

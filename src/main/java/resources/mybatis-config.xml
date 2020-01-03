@@ -26,6 +26,7 @@
 	<typeAliases>
 	 	<typeAlias alias="mVO" type="com.ex1.yj.vo.MemberVO"/>
 	 	<typeAlias alias="bVO" type="com.ex1.yj.vo.BoardVO"/>
+	 	<typeAlias alias="page" type="com.ex1.yj.util.PageUtil"/>
 	</typeAliases>
 
 	<mappers>

@@ -128,4 +128,16 @@ public class Board {
 		return mv;
 	}
 	
+	@RequestMapping("/tBoardBody.yj")
+	public ModelAndView tBoardBody(ModelAndView mv,
+									int tbno) {
+		
+		BoardVO body = bDAO.tBoardBody(tbno);
+		
+		mv.addObject("CONT", body);
+		mv.setViewName("/board/tBoardBody");
+		
+		return mv;
+	}
+	
 }

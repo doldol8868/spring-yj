@@ -59,4 +59,11 @@ public class BoardDAO {
 			
 			return list;
 		}
+		
+		public BoardVO tBoardBody(int tbno) {
+			
+			BoardVO body = sqlSession.selectOne("bSQL.tBoardBody", tbno);
+					
+			return body;
+		}
 }

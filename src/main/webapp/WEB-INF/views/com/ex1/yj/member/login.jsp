@@ -14,8 +14,8 @@
 		});
 	});
 	
-	function inputCheck(check){
-		// 아이디 입력 여부 검사
+	function loginCheck(){
+		// 아이디 입력 여부 검사  
 		if(check.m_id != null) {
 			if(check.m_id.value == "") {
 				alert("아이디를 입력하세요.")
@@ -33,10 +33,6 @@
 				return false;
 			}
 		}
-		if(<%
-			
-		%>)
-			
 	}
 </script>
 
@@ -56,7 +52,7 @@
 			<input type="password" id="m_pw" name="m_pw">
 			<br>
 			<br>
-			<input type="submit" onclick="inputCheck(this.form)">
+			<input type="submit" onclick="loginCheck()">
 		</form>
 	</center>
 </c:if>
