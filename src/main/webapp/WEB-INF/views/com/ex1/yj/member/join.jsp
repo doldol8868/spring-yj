@@ -41,7 +41,7 @@
 			
 			if(sid == ''){
 				$('#idCheckInfo').toggleClass('font-red');
-				$('#idCheckInfo').html("아이디를 입력해주세요.")
+				$('#idCheckInfo').html("아이디를 입력해주세요.");
 				
 				return false;
 			}
