@@ -14,27 +14,40 @@
 		});
 	});
 	
-	function loginCheck(){
+	function inputCheck(){
 		// 아이디 입력 여부 검사  
-		if(check.m_id != null) {
-			if(check.m_id.value == "") {
-				alert("아이디를 입력하세요.")
-				check.m_id.ficus()
-				
-				return false;
-			}
-		}
+		if($('#m_id').val() == "") {
+			$('#idCheckInfo').attr('class', "");
+			$('#idCheckInfo').toggleClass('info');
+			$('#idCheckInfo').html('아이디를 입력하세요.')
+
+		return false;
+	}
+		
 		// 비밀번호 입력 여부 검사
-		if(check.m_pw != null) {
-			if(check.m_pw.value == "") {
-				alert("패스워드를 입력하세요.")
-				check.m_pw.ficus()
+		if($('#m_pw').val() == "") {
+			$('#pwCheckInfo').attr('class', "");
+			$('#pwCheckInfo').toggleClass('info');
+			$('#pwCheckInfo').html('비밀번호를 입력하세요.')
 				
-				return false;
-			}
+			return false;
 		}
 	}
 </script>
+<style>
+	.submit{
+		display: block;
+		margin-top: 1em;
+	}
+
+	.none{
+		display: none;
+	}
+	.info{
+		color: red;
+		display: block;
+	}
+</style>
 
 </head>
 <body>
@@ -43,16 +56,21 @@
 			Login Test
 		</h3>
 	</div>
+<c:if test="${not empty isFail}">
+	<script type="text/javascript">
+		alert("로그인에 실패했습니다. \n아이디 또는 비밀번호를 확인해주세요.")
+	</script>
+</c:if>
 <c:if test="${empty SID}">
 	<center>
-			<form method="POST" action="/yj/member/loginProc.yj">
+			<form method="POST" action="/yj/member/loginProc.yj" onsubmit="return inputCheck()">
 			<p>ID</p>
 			<input type="text" id="m_id" name="m_id">
+			<p id="idCheckInfo" class="none"></p>
 			<p>PW</p>
 			<input type="password" id="m_pw" name="m_pw">
-			<br>
-			<br>
-			<input type="submit" onclick="loginCheck()">
+			<p id="pwCheckInfo" class="none"></p>
+			<input class="submit" type="submit">
 		</form>
 	</center>
 </c:if>
